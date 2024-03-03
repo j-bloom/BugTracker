@@ -2,8 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { MdEditDocument } from "react-icons/md";
 import { RiDeleteBin2Fill } from "react-icons/ri";
+import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Table = ({ headers, items }) => {
+  const navigate = useNavigate();
+  const { id } = useParams();
+
   function formattedDate(date) {
     const options = {
       year: "numeric",
@@ -52,12 +57,20 @@ const Table = ({ headers, items }) => {
           <td>{formattedDate(item.DateBugCreated)}</td>
           <td>{formattedDate(item.DateLastUpdated)}</td>
           <td>
-            <Link to={`/editbug/${item.BugId}`}>
-              <MdEditDocument />
+            <Link
+              to={`/editbug/${item.BugId}`}
+              className="bg-warning w500 h-100 d-inline-block me-2"
+            >
+              <button type="button" className="btn btn-warning">
+                Edit
+              </button>
             </Link>
-            <Link to={`/deletebug/${item.BugId}`}>
-              <button type="button">
-                <RiDeleteBin2Fill />
+            <Link
+              to={`/deletebug/${item.BugId}`}
+              className="bg-danger w-50 h-100 d-inline-block"
+            >
+              <button type="button" className="btn btn-danger">
+                Delete
               </button>
             </Link>
           </td>
@@ -75,7 +88,7 @@ const Table = ({ headers, items }) => {
             <Link to={`/editbug/${item.BugId}`}>
               <MdEditDocument />
             </Link>
-            <Link to={`/editbug/${item.BugId}`}>
+            <Link to={`/deletebug/${item.BugId}`}>
               <RiDeleteBin2Fill />
             </Link>
           </td>
