@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../Images/homeImg.jpg";
 import bee from "../Images/beeImg.jpg";
 
@@ -19,6 +20,12 @@ const Home = () => {
             <img className="img-fluid" src={logo} alt="Bug Bee Gone logo" />
           </div>
         </div>
+        <Link to={"/login"}>
+          <button className="btn btn-primary me-5">Login</button>
+        </Link>
+        <Link to={"/signup"}>
+          <button className="btn btn-secondary">Signup</button>
+        </Link>
       </div>
     </div>
   );
