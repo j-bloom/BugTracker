@@ -15,6 +15,7 @@ const ViewBugs = () => {
     "Priority",
     "Date Created",
     "Last Modified",
+    "Actions",
   ];
 
   useEffect(() => {
