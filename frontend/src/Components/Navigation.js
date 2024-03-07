@@ -16,11 +16,6 @@ const Navigation = () => {
           </Link>
         </li>
         <li className="nav-item- m-1">
-          <Link className="btn btn-light btn-outline-primary" to="/editbug">
-            Edit Bug
-          </Link>
-        </li>
-        <li className="nav-item- m-1">
           <Link className="btn btn-light btn-outline-primary" to="/viewbugs">
             View All Bugs
           </Link>
